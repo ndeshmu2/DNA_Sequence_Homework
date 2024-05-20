@@ -1,0 +1,37 @@
+{
+  "author": "YOU <YOU@example.com>",
+  "name": "my_actionhero_project",
+  "description": "my actionhero project",
+  "version": "0.1.0",
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "dependencies": {
+    "actionhero": "29.3.0",
+    "ioredis": "latest",
+    "ioredis-mock": "latest",
+    "winston": "latest",
+    "ws": "latest"
+  },
+  "scripts": {
+    "postinstall": "npm run build",
+    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "start": "node dist/server.js",
+    "actionhero": "actionhero",
+    "test": "NODE_ENV=test jest",
+    "pretest": "npm run lint",
+    "build": "tsc",
+    "serve": "npm run build && npm run start",
+    "lint": "prettier --check src/*/** __tests__/*/**",
+    "pretty": "prettier --write src/*/** __tests__/*/**"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.12.12",
+    "ts-jest": "^29.1.2",
+    "ts-node": "^9.0.0",
+    "ts-node-dev": "^1.0.0",
+    "typescript": "^4.0.0"
+  }
+}
